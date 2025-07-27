@@ -8,6 +8,7 @@ dotenv.config();
 const PORT = process.env.PORT || 4500;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // For parsing form data
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
