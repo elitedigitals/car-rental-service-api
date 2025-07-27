@@ -1,5 +1,5 @@
-import Car from "../models/car.schema";
-import User from "../models/user.schema";
+import Car from "../models/car.schema.js";
+// import User from "../models/user.schema";
 
 export const rentCar = async (req, res) => {
     const { carId } = req.params;

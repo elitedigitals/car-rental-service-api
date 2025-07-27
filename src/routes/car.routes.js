@@ -4,8 +4,8 @@ import { getAllCars,
      addCar, 
      editCar, 
       deleteCar } from '../controller/admin.controller.js';
-      import { isAuthenticated } from '../middleware/auth.middleware.js';
-import { rentCar } from '../controller/rent.controller.js';
+import { isAuthenticated } from '../../middleware/isAuth.middleware.js';
+import { rentCar } from '../controller/rental.controller.js';
 const router = express.Router();
 
 
