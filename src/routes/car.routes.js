@@ -4,14 +4,14 @@ import { getAllCars,
      addCar, 
      editCar, 
       deleteCar } from '../controller/admin.controller.js';
-import { isAuthenticated } from '../../middleware/isAuth.middleware.js';
+import { isAuthenticated } from '../../middleware/isAuth.js';
 import { rentCar } from '../controller/rental.controller.js';
 const router = express.Router();
 
 
 router.get('/get-cars', getAllCars);
 router.get('/search-cars', searchCars);
-router.post('/add-car',isAuthenticated, addCar);
+router.post('/add-car', isAuthenticated, addCar);
 router.put('/edit-car/:carId',isAuthenticated, editCar);
 router.delete('/delete-car/:carId',isAuthenticated, deleteCar);
 

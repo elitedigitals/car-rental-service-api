@@ -19,7 +19,7 @@ export const addCar = async (req, res) => {
     }
     try {
         const user = await User.findById(id);
-        if(user.isadmin !==true) {
+        if(user.isAdmin !==true) {
             return res.status(403).json({ message: "Only Admin can add car" });
         }
         const newCar = new Car(
@@ -37,7 +37,9 @@ export const addCar = async (req, res) => {
         
         res.status(201).json({message: "Car added successfully", newCar });
     } catch (error) {
+        console.error("Error adding car:", error);
         res.status(500).json({ message: "Error adding car", error });
+        
     }
 };
 
