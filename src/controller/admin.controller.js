@@ -4,7 +4,7 @@ import User from "../models/user.schema.js";
 export const getAllCars = async (req, res) => {
     try {
         const cars = await Car.find();
-        res.status(200).json({message:" car added successfully",cars});
+        res.status(200).json({message:" All Cars",cars});
     } catch (error) {
         res.status(500).json({ message: "Error fetching cars", error });
     }
@@ -36,7 +36,7 @@ export const addCar = async (req, res) => {
         );
         await newCar.save();
         
-        res.status(201).json({message: "All Cars", newCar });
+        res.status(201).json({message: "Car added Successfully", newCar });
     } catch (error) {
         console.error("Error adding car:", error);
         res.status(500).json({ message: "Error adding car", error });
