@@ -22,6 +22,7 @@ export const addCar = async (req, res) => {
         if(user.isAdmin !==true) {
             return res.status(403).json({ message: "Only Admin can add car" });
         }
+
         const newCar = new Car(
             {
                 make,
@@ -35,7 +36,7 @@ export const addCar = async (req, res) => {
         );
         await newCar.save();
         
-        res.status(201).json({message: "Car added successfully", newCar });
+        res.status(201).json({message: "All Cars", newCar });
     } catch (error) {
         console.error("Error adding car:", error);
         res.status(500).json({ message: "Error adding car", error });
