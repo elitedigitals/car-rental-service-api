@@ -95,9 +95,9 @@ export const deleteCar = async (req, res) => {
 };
 
 export const searchCars = async (req, res) => {
-    const {make} = req.query;
+    const {make} = req.body;
     try {
-        const car = await car.find({make: make});
+        const car = await Car.find({ make });
         if (!car) {
             return res.status(404).json({ message: "No cars found" });  
         }
